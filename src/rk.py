@@ -3,21 +3,21 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
 def Lorentz(x,t):
-    
+
     a=x[0]
     y=x[1]
     z=x[2]
-    
+
     sigma=10.
     beta=8./3.
     rho=28.
-    
+
     #defining the system of ODEs
     dxdt=sigma*(y-a)
     dydt= a*(rho-z)-y
     dzdt= a*y-beta*z
-   
-   
+
+
     return [dxdt,dydt,dzdt]
 
 
@@ -56,3 +56,4 @@ ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.set_zlabel('z')
 ax.legend()
+fig.savefig('buterfly.pdf')
